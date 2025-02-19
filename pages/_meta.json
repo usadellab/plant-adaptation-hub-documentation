@@ -1,0 +1,17 @@
+{
+  "index": "Home Page",
+  "datasets": "Datasets",
+  "modules":  "Functional Modules",
+  "downloads" : "Downloads",
+  "SFTP" : "UNTWIST SFTP",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://www.camelina-hub.org/router?component=contact",
+    "newWindow": true
+  }
+}

@@ -1,0 +1,47 @@
+# Genome Assembly Overview 
+
+The Genome Assembly Overview module provides a comprehensive summary of the quality and characteristics of a selected genome assembly. It integrates various statistics and metrics to help users assess the completeness, quality, and structural features of genome assemblies. Below is a detailed explanation of the key components presented by the module.
+
+## Overview of Features
+
+### 1. **General Information**
+   - **Name**: The scientific name of the organism (e.g., *Camelina sativa*).
+   - **Common Name**: A more familiar or widely used name (e.g., DH55).
+   - **Assembly Accession**: A unique identifier for the genome assembly version (e.g., GCF_000633955.1).
+   - **Assembly Level**: Describes the status of the assembly (e.g., Chromosome).
+   - **Assembly Method**: The method or tool used for genome assembly (e.g., SOAPdenovo v. 2.01).
+   - **Sequencing Technology**: Describes the technology used to sequence the genome (e.g., Illumina HiSeq, 454).
+
+### 2. **BUSCO Completeness (v4.0.2)**
+   - **BUSCO Categories**: The assembly's completeness is evaluated using BUSCO (Benchmarking Universal Single-Copy Orthologs). The analysis provides four categories:
+     - **Single Copy**: Genes that are found as a single copy in the genome.
+     - **Duplicated**: Genes that are present in more than one copy.
+     - **Fragmented**: Genes that are partially present.
+     - **Missing**: Genes that are absent from the assembly.
+   - **BUSCO Completeness**: Overall genome completeness based on the percentage of conserved genes present (e.g., 99.84769%).
+   - **BUSCO Lineage**: The database used for comparison (e.g., *brassicales_odb10* with 4596 BUSCOs).
+
+### 3. **Assembly Stats**
+   - **GC Percent**: The percentage of the genome made up of guanine (G) and cytosine (C) nucleotides (e.g., 36.5%).
+   - **Total Sequence Length**: The total length of the assembled genome in base pairs (e.g., 641356059 bp).
+   - **Genome Coverage**: The sequencing coverage, indicating how many times the genome was sequenced on average (e.g., 100x).
+   - **Contig N50**: The length of the contig at which 50% of the total genome length is contained in contigs of this length or longer (e.g., 32728).
+   - **Scaffold N50**: The scaffold length at which 50% of the total genome length is contained in scaffolds of this length or longer (e.g., 30099736).
+   - **Scaffold PN50**: The scaffold length considering only pseudo-chromosomes at the 50th percentile (e.g., 0.9386279455106855).
+
+### 4. **Structural Features**
+   - **Number of Genes**: Total number of genes identified in the assembly (e.g., 98741.0).
+   - **Number of Protein Coding Genes**: The number of genes that code for proteins (e.g., 82569.0).
+   - **Number of Pseudo Genes**: The number of pseudogenes in the assembly (e.g., 7930.0).
+   - **Number of Noncoding Genes**: The number of genes that do not encode proteins but may perform other functions (e.g., 8242.0).
+
+## Usage
+
+This module allows researchers, plant breeders, and bioinformaticians to assess the quality of genome assemblies at a glance. It provides critical information about the completeness and structure of the genome, helping users make informed decisions about the reliability of the data for downstream analyses such as trait mapping, genome-wide association studies (GWAS), and functional genomics.
+
+The user-friendly interface and visual representation of BUSCO completeness make it easy to evaluate the assembly's reliability and its suitability for various applications. With integrated structural features and assembly stats, users gain a deeper understanding of the genome's architecture, aiding in tasks such as gene annotation, comparative genomics, and evolutionary studies.
+
+## Conclusion
+
+The Genome Assembly Overview module is an essential tool for evaluating the completeness, quality, and structural features of genome assemblies. It empowers users by providing key statistics in a clear, concise format, ensuring that genomic data is of sufficient quality for further analysis and research.
+

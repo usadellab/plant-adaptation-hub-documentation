@@ -1,0 +1,53 @@
+# Geographic Map 
+
+This component is a powerful tool designed to display a geographic map of camelina accessions. This functionality is crucial for farmers, plant breeders, and scientists who are interested in understanding the distribution and diversity of camelina germplasm. Below, we outline the key functionalities and the importance of this component for these stakeholders.
+
+## Functionality
+
+### 1. Interactive Map Display
+
+The `GeoLocator` component utilizes the Plolty, D3 and [world geo json data](https://github.com/johan/world.geo.json/tree/master) libraries to render an interactive map. Users can:
+
+- **Zoom and Pan**: Navigate the map to explore different geographic regions.
+- **Markers**: View markers that represent individual camelina accessions.
+- **Popups**: Click on markers to view detailed information about each accession.
+
+### 2. Data Fetching and Display
+
+The component fetches germplasm data from an API and processes it to display on the map. Key functionalities include:
+
+- **Data Cleaning**: Removes unnecessary data fields to focus on relevant information.
+- **Dynamic Rendering**: Updates the map with fetched data dynamically.
+
+### 3. Customizable Icons and Popups
+
+- **Leaflet Icons**: Custom icons can be used to represent different types of accessions or data points.
+- **Popups**: Provide detailed germplasm information in an easy-to-read format when a marker is clicked.
+
+### 4. Real-time Updates
+
+By fetching data from an API, the component ensures that users have access to the most up-to-date information available.
+
+## Importance for Stakeholders
+
+### Farmers
+
+- **Understanding Local Diversity**: Farmers can identify and locate camelina accessions that are geographically proximate to their own fields. This helps in understanding the local genetic diversity and selecting appropriate varieties for cultivation.
+- **Access to Germplasm Information**: Detailed information about each accession, such as its origin and traits, can help farmers make informed decisions about which germplasm to acquire for breeding or cultivation.
+
+### Plant Breeders
+
+- **Germplasm Exploration**: Breeders can explore a wide range of camelina accessions from different geographical regions. This aids in selecting diverse parent lines for breeding programs.
+- **Trait Association**: By viewing the distribution of specific traits across different accessions, breeders can identify potential candidates for introducing desirable traits into their breeding programs.
+
+### Scientists
+
+- **Research and Analysis**: Scientists can use the geographic data to study patterns of genetic diversity, migration, and adaptation of camelina. This is essential for understanding the evolutionary history and genetic structure of the species.
+- **Conservation Strategies**: The map can help scientists identify regions with high genetic diversity which need to be prioritized for conservation efforts.
+- **Collaboration and Data Sharing**: The component facilitates easy sharing of germplasm data among researchers, promoting collaboration and data-driven research.
+
+## Conclusion
+
+The `GeoLocator` component is a versatile and valuable tool for farmers, plant breeders, and scientists. By providing a visual representation of the camelina germplasm distribution and detailed accession information, it supports informed decision-making, research, and collaboration. This component enhances the understanding of camelina genetic resources, ultimately contributing to the improvement and conservation of this important crop.
+
+By integrating this tool into their workflows, stakeholders can leverage geographic and genetic data to drive innovation and sustainability in camelina cultivation and research.

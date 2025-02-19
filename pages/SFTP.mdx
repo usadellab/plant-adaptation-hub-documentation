@@ -1,0 +1,80 @@
+
+### Setting up connection to untwist SFTP server
+
+#### 1. Generate ssh key for authentication
+
+
+
+Whoever needs access please reply to this email with their public ssh key. The information on how to generate one can be found here
+
+
+##### windows:     [https://www.purdue.edu/science/scienceit/ssh-keys-windows.html](https://www.purdue.edu/science/scienceit/ssh-keys-windows.html)
+
+##### Mac/linux:  
+
+```sh
+
+# open terminal
+# run the following commands
+ssh-keygen                       # this command will create the key if you already have dont need to run this
+cat ~/.ssh/id_rsa.pub            # this will show you the contents of the file
+```
+
+##### NOTE: NEVER SHARE YOUR PRIVATE key
+
+
+#### Setting up filezilla client
+
+1.  Open filezilla client
+2.  under File select 'Site Manager'
+
+
+import Image from '../components/Image'
+
+<Image src="/sftp/filezilla_sitmanager.jpg" alt="image of the site manager"/>
+
+
+3. This will pop up the following menu
+
+
+<Image src="/sftp/filezilla_sitmanager_popup.png" alt="image of the site manager"/>
+
+4. After clicking 'New site' enter the name of the connection 
+
+<Image src="/sftp/filezilla_sitmanager_sitename.png" alt="image of the site manager"/>
+
+5. Select the SFTP protocol 
+
+<Image src="/sftp/filezilla_sitmanager_protocl.png" alt="image of the site manager"/>
+
+
+6. Select the SFTP protocol 
+
+<Image src="/sftp/filezilla_sitmanager_ip.png" alt="image of the site manager"/>
+
+7. Set the logon type to key 
+
+<Image src="/sftp/filezilla_logon.png" alt="image of the site manager"/>
+
+
+
+8. Enter you username 
+
+<Image src="/sftp/filezilla_username.png" alt="image of the site manager"/>
+
+9. Select you private ssh key. From the browse when you will choose the ssh private key file on your system (usually located in the home directory ~/.ssh/id_rsa ). 
+
+
+<Image src="/sftp/filezilla_pkey.png" alt="image of the site manager"/>
+
+10. It might display a message for converting the key. please press Yes option  
+
+<Image src="/sftp/filezilla_formatkey.png" alt="image of the site manager"/>
+
+11. Then it will ask to save the file in the new format. here you can give any location. (if the key is protected it will ask for the passphrase but i guess it does not apply to your case here). Please give this a name e.g my_untwistsftp_key
+
+then go back to step 4 and select the key newly formatted key you just created (my_untwistsftp_key).
+
+12. then press connect.
+
+<Image src="/sftp/filezilla_connect.png" alt="image of the site manager"/>
