@@ -1,0 +1,3 @@
+[submodule "camelina-docs"]
+	path = camelina-docs
+	url = https://github.com/ataulhaleem/camelina-hub-documentation.git
