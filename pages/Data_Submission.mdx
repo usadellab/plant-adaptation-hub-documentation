@@ -1,0 +1,67 @@
+## Data Submission Guidelines for the sftpuntwist Cluster
+
+Please adhere to the following guidelines when submitting your data to the sftpuntwist cluster to ensure data consistency and usability.
+
+**File Structure and Format:**
+
+1. **One File Per Experiment:**
+    * Each file should contain data from a single experiment. For example, if you performed FAMEs analysis, all variables measured during that experiment should be included in one file.
+
+2. **Tab-Separated Values (TSV):**
+    * Files must be tab-separated text files (.tsv).
+
+3. **File Naming Convention:**
+    * Name each file after the experiment it represents. For example, a file containing FAMEs analysis data should be named `FAMES.tsv`.
+
+**File Content and Field Definitions:**
+
+Each file should adhere to the following structure, with the first six columns representing metadata:
+
+-![datasubmissionformat](/datasubmissionformat.png)
+
+
+
+| Column Name | Description | Example |
+| :-------- | :------------  | :---------:| 
+| line | cultivar | UNT18, UNT4 |
+| replicate | biological replicate | r1, r2, r3 ... |
+| institute | The institute code who performed the experiment | RRES, INRAE, AIT, UNIBO, CCE |
+| interval | this field is for time series experiment or multi year trials | Year1, Year2 |
+| development stage | the developmental stage of the plant at which the data was measured | maturity, seedling, flowering, 4 leaf stage etc, |
+| location | the country of the institute | e. g for RRES it will be United Kingdom |
+| Plant_anatomical_entity | the tissue on which the measurement is made | leaf, whole plant, root, seed, flower |
+| treatment | experimental conditions | control, heat, drought |
+
+  
+
+
+### Folder structure on the sftpuntwist
+
+in the sftpuntwist folder you can follow this scheme to deposit your data
+
+```md
+e. g if WP3 is the main folder
+
+- WP3
+    -RRES
+        -FAMES.tsv
+        - Licor.tsv
+        -FAMES_notes.txt
+        -FAMES_protocol.txt
+
+    -INRAE
+        -FAMES.tsv
+        - Licor.tsv
+    -UNIBO
+        -FAMES.tsv
+        - Licor.tsv
+        -FAMES_notes.txt
+        -FAMES_protocol.txt
+
+```
+
+
+### Additional information
+
+If there is any additional information, this chould also be submitted usinng the same file name with you experiment.
+e. g. above folder contain files FAMES_notes.txt, FAMES_protocol.txt or FAMES_README.txt in your corresponding folder.
