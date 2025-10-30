@@ -1,0 +1,39 @@
+# 🧬 Genome Assemblies Comparison
+
+This module provides a basic but powerful tool for the comparative analysis and visualization of currently available genome assemblies for the selected species. It is designed for researchers who need to quickly assess structural variations, gene conservation, and expression patterns between two genomic sequences.
+
+---
+
+## 1. Control Panel: Defining the Comparison
+
+The top section allows the user to define the two genomes (or assemblies) to be compared and the specific region of interest.
+
+| Control | Description | Purpose |
+| :--- | :--- | :--- |
+| **Reference Genome (Fixed)** | Selects the reference assembly (e.g., the primary or well-annotated genome) that forms the basis of the comparison alignment track. | The **X-axis** anchor for all subsequent alignments and annotations. |
+| **Query Genome** | Selects the genome or assembly to be compared against the reference. The query is aligned to the reference. | Identifies the genome assembly whose sequence is displayed and compared. |
+| **Coordinate/Zoom Box** | An interactive box displaying the currently visible start and end genomic coordinates. | Allows direct input of coordinates to navigate to a specific region quickly. |
+
+---
+
+## 2. Genomic Visualization and Alignment Tracks
+
+This section displays a dynamic, interactive visualization of the genomic region, allowing for detailed comparison between the reference and query genomes.
+
+### Navigation
+
+The visualization includes a ruler (top axis) displaying genomic coordinates (e.g., 1M, 2M, 3M) and controls for movement:
+
+* **Ruler (Top Axis):** Provides scale and positional context along the selected chromosome.
+* **Panning Arrows:** Allow smooth navigation to the left (`←`) or right (`→`).
+* **Zoom Buttons:** Allow zooming **in** (`+`) or **out** (`-`) from the current position.
+* **Quick Jumps:** Buttons provide shortcuts for navigation (e.g., `100BP`, `1KBP`).
+
+### Data Tracks
+
+The visualization is composed of several stacked data layers:
+
+* **Reference Sequence Track:** Shows the gene structure and annotations (e.g., introns, exons) for the fixed reference genome. Gene annotations often include links to source information (e.g., *Arabidopsis thaliana* projections).
+* **Query Alignment Track:** Displays the degree of alignment between the query sequence and the reference sequence. Gaps or vertical bars in this track indicate **structural variations** (insertions, deletions, or rearrangements) between the two assemblies.
+* **Structural Annotations Track:** Provides contextual information, displaying known gene features (like CDS, mRNA, and gene IDs) with links to their source for functional details.
+* **Expression Tracks (e.g., DH55\_root\_salt\_CPM):** Displays quantitative data (e.g., Counts Per Million, or CPM) indicating gene expression levels in a specific experimental condition (e.g., root tissue under salt stress). This allows users to **correlate structural comparison with functional expression data**.

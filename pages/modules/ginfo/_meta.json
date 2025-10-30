@@ -1,4 +1,9 @@
 {
     "assembly_stats": "Genome Assembly Overview",
-    "assembly_stats_comp": "Compare Genome Assemblies"
+    "assembly_stats_comp": "Compare Genome Assemblies",
+    "genome_alignment": "Genome Alignment",
+    "sequence_alignment": "Sequence Alignment",
+    "phylogenetic_tree": "Phylogenetic Tree",
+    "gene_search_by_id": "Gene Search by Id",
+    "blastn": "BLAST"
 }

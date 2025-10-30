@@ -1,0 +1,63 @@
+# 🌳 Create Phylogenetic Tree
+
+This module is a dedicated tool for evolutionary analysis. It processes multiple DNA or protein sequences in FASTA format, calculates a distance matrix, and constructs a phylogenetic tree using the **Neighbor-Joining algorithm** to represent the evolutionary relationships between the sequences.
+
+---
+
+## 1. Input and Generation
+
+### Input Area
+
+The main input area requires raw sequence data in **FASTA format** (maximum 50 sequences).
+
+| Action | Function |
+| :--- | :--- |
+| **Generate Tree** | Executes the sequence alignment, distance matrix calculation, and phylogenetic tree construction. |
+| **Clear** | Clears the text editor of all input sequences. |
+| **Example** | Pre-fills the input box with sample FASTA sequences to demonstrate the required format. |
+
+---
+
+## 2. Tree Customization Options
+
+The middle panel provides controls for adjusting the visual display of the generated tree.
+
+### Plotting Options
+
+| Control | Type | Description |
+| :--- | :--- | :--- |
+| **Rectangular / Circular** | Radio Button | Toggles the overall layout style of the tree visualization. |
+| **Show Labels** | Checkbox | Toggles the visibility of node and branch labels (e.g., branch lengths, confidence scores). |
+| **Node Color** | Dropdown | Sets the color for the internal and external nodes of the tree. |
+| **Line Color** | Dropdown | Sets the color for the branches/lines connecting the nodes. |
+| **Line Style** | Dropdown | Sets the visual style of the branches (e.g., Solid, Dashed). |
+
+### Size and Scale
+
+Sliders allow for dynamic adjustment of various visual properties of the tree rendering:
+
+| Slider | Description |
+| :--- | :--- |
+| **Link Width** | Controls the thickness of the branches/lines in the tree. |
+| **Resize** | A general slider likely used to scale the entire tree visualization area. |
+| **Node Size** | Controls the size of the points representing the nodes (internal and terminal). |
+| **Font Size** | Controls the size of the text labels for the sequence names and any associated data (e.g., branch lengths). |
+
+### Download
+
+The download buttons allow users to export the final tree visualization in various common image formats for use in reports or presentations.
+
+* **SVG (Scalable Vector Graphics)**
+* **PNG (Portable Network Graphics)**
+* **JPEG (Joint Photographic Experts Group)**
+
+---
+
+## 3. Phylogenetic Tree Output
+
+The bottom section displays the computed tree visualization.
+
+* **Tree Structure:** Shows the hierarchical arrangement of sequences, with branches representing evolutionary time or distance. Sequences that share a closer branching point (closer to the right side of the visualization) are more closely related.
+* **Root:** The starting point of the tree (labeled `Root` or similar) represents the common ancestor.
+* **Nodes:** The branch points (internal nodes, labeled `Node 1`, `Node 2`, etc.) represent inferred common ancestors of the groups branching from them.
+* **Labels (Terminal Nodes):** The leaves of the tree are the identifiers of the input sequences (e.g., `Camelina sativa | DH55 |...`).

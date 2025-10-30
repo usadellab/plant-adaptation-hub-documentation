@@ -1,0 +1,53 @@
+# 🔍 Gene Search Engine
+
+The Gene Search Engine allows users to quickly retrieve and visualize detailed information for one or more specific gene identifiers (IDs). This tool is essential for researchers looking up functional annotations and the genomic structure of genes of interest.
+
+---
+
+## 1. Input and Action
+
+The functionality is centered around a single input field that accepts gene IDs.
+
+| Element | Description |
+| :--- | :--- |
+| **Input Field** | Accepts one or more **Gene IDs** (specific to the species, e.g., Cs01g001000). Multiple IDs should be separated by a line break or comma. |
+| **Search Genes Button** | Initiates the query against the database. |
+
+---
+
+## 2. Search Results Summary
+
+Immediately below the input, the tool provides a summary of the search operation.
+
+| Statistic | Description |
+| :--- | :--- |
+| **Total Genes Queried** | The total number of unique gene IDs submitted in the input field. |
+| **Annotations Found (Hits)** | The number of gene IDs for which the database returned successful, detailed annotation records. |
+
+---
+
+## 3. Detailed Gene Annotation (Per Hit)
+
+Each successful hit displays its information within an expandable panel, identified by the **Gene ID**.
+
+### Gene Structure Visualization
+
+This section provides a schematic view of the gene's physical structure and transcripts.
+
+* **Overall Gene Region:** Specifies the genomic coordinates (start and end base pairs) defining the span of the gene.
+* **Transcripts:** Displays the individual transcript isoforms associated with the gene ID.
+* **Structure Diagram:** A visual representation where **blue rectangles** represent **exons** and **connecting lines** represent **introns**.
+
+### 4. Feature Details Modal (Interaction)
+
+When a user **clicks on an exon** in the Structure Diagram, a modal window appears with fine-grained details specific to that feature (e.g., the Coding Sequence, or CDS).
+
+| Field | Description |
+| :--- | :--- |
+| **Type** | The type of feature clicked (e.g., **CDS** for Coding Sequence). |
+| **ID** | The specific transcript identifier of the feature (e.g., `Csa01g001000.2`). |
+| **Location** | The precise genomic start and end coordinates of this feature on the chromosome (e.g., `Chr 1 3687 - 4802`). |
+| **BINCODE** | A specific classification code for the feature (e.g., `'35.1'`). |
+| **DESCRIPTION** | A highly detailed, consolidated description combining information from multiple sources (Mercator, Swissprot, etc.) relevant to the transcript. |
+| **NAME** | The simplified or common name for the feature, if available. |
+| **Show Genome View Button** | An action button that likely redirects the user to the **Genome Assemblies Comparison** tool, centering the view directly on the coordinates of the selected feature. |
