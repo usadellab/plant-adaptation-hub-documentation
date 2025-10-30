@@ -1,0 +1,63 @@
+# 🔬 BLAST Search
+
+The BLAST (Basic Local Alignment Search Tool) module performs sequence similarity searches. It takes a single nucleotide or protein sequence (the **Query**) and compares it against a comprehensive database of sequences to find regions of local similarity.
+
+The results are displayed as interactive cards, showing the most significant matches based on E-value, identity, and location.
+
+---
+
+## 1. Query and Actions
+
+### Query Input
+
+The large text area is dedicated to receiving the query sequence.
+
+| Input Type | Requirement | Description |
+| :--- | :--- | :--- |
+| **Query Sequence** | Single nucleotide (DNA) or protein sequence (amino acid). | The sequence must be provided in raw text format (not FASTA, though the example implies raw sequence data). |
+
+### Action Buttons
+
+| Button | Function |
+| :--- | :--- |
+| **Run BLAST** | Initiates the search process using the query sequence against the configured database. |
+| **Clear** | Clears the text editor of the query sequence. |
+| **Example** | Pre-fills the input box with a sample query sequence for quick testing. |
+
+---
+
+## 2. Filter & Sort Controls
+
+After the BLAST search is complete, users can refine the displayed results using the controls provided below the input area.
+
+| Control | Type | Description |
+| :--- | :--- | :--- |
+| **Max E-value** | Dropdown/Input | Sets the maximum acceptable **Expectation Value** (E-value) for a result to be shown. Lower E-values indicate higher reliability. |
+| **Min Identity (%)** | Dropdown/Input | Sets the minimum required percentage of identical residues between the query and the matched sequence. |
+| **Source** | Dropdown | Filters results based on the original data source of the matching sequence (e.g., specific genome assembly or annotation project). |
+| **Organism** | Dropdown | Filters results to only show matches against a selected organism. |
+| **Sort By** | Dropdown | Allows the user to order the result cards by different metrics (e.g., E-value, Identity, Location). |
+| **Reset** | Button | Clears all active filters and sorting options, returning the view to the default result set. |
+
+---
+
+## 3. Search Result Cards
+
+Each card represents a significant match (a "Hit") found by the BLAST algorithm.
+
+### Key Match Statistics
+
+The header of each card displays the most important statistics for the match:
+
+* **Organism:** The species of the matching sequence.
+* **Tax ID:** The NCBI Taxonomy ID for the organism.
+* **E-value:** The probability due to chance that there is another alignment score as good as or better than the score given. **Lower is better.**
+* **Identity (%):** The percentage of residues that are identical between the query and the hit in the aligned region.
+* **Visual Identity Bar:** A colored bar that visually represents the identity percentage.
+
+### Genomic Location
+
+* **Location:** The chromosomal coordinates of the matching sequence within its organism's genome (e.g., `Chr01: 11065053 - 11065160`).
+* **Assembly:** The specific assembly version the sequence belongs to.
+* **Source:** The project or database the sequence was derived from (e.g., `SUN_X2`, `PhytoZyme`).
+

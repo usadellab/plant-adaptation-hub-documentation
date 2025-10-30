@@ -1,0 +1,50 @@
+# 🧬 Multiple Sequence Alignment (MSA) Tool
+
+The Multiple Sequence Alignment (MSA) tool processes multiple DNA or protein sequences to identify regions of similarity, functional conservation, and evolutionary relationships. It utilizes the Neighbor-Joining algorithm to construct phylogenetic trees based on sequence distance.
+
+---
+
+## 1. Input and Actions
+
+This section manages the sequence data used for alignment.
+
+### Input Area
+
+The main input area accepts raw sequence data in **FASTA format**.
+
+| Feature | Requirement | Description |
+| :--- | :--- | :--- |
+| **Format** | FASTA | Sequences must start with a header line (`>Name`) followed by the sequence data on subsequent lines. |
+| **Limit** | Max 50 sequences | A constraint to ensure performance and manageable alignment visualization. |
+| **Data Type** | DNA or Protein | The tool can handle both nucleic acid and amino acid sequences. |
+
+### Action Buttons
+
+| Button | Function |
+| :--- | :--- |
+| **Align Sequences** | Executes the alignment algorithm (e.g., ClustalW, MUSCLE, or similar) on the provided FASTA input. |
+| **Clear** | Clears the text editor of all input sequences. |
+| **Example** | Pre-fills the input box with sample sequences to demonstrate the required FASTA format and provide a quick test case. |
+
+---
+
+## 2. Alignment Results
+
+The results section displays the core alignment and calculated conservation measures.
+
+### Sequence Visualization
+
+The alignment is presented with color-coding, where the same color indicates a match or a biochemically similar residue across all sequences.
+
+* **Sequence Identifiers:** Each aligned sequence is listed with its original FASTA header (e.g., `DH55|1:16707270-16708136`).
+* **Alignment Block:** Shows the sequences lined up, with gaps introduced by the algorithm to maximize matching residues.
+
+### Conservation Metrics
+
+A key output of the alignment is the measure of conservation, typically represented by two elements:
+
+* **Sequence Logo (Top):** This track visually represents the most frequent residues (bases or amino acids) at each position. The height of the letter at any position indicates the **level of conservation** (information content) at that site.
+* **Conservation Bar (Bottom):** A bar graph showing the conservation score across the alignment. Taller bars indicate positions where all or most sequences have the same residue (high conservation). This track is a direct indicator of potential **functional or structural importance** in that region.
+
+---
+
