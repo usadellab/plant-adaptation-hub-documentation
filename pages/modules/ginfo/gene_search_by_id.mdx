@@ -1,17 +1,21 @@
+Here's the updated documentation with the specific genome and database information:
+
 # 🔍 Gene Search Engine
 
-The Gene Search Engine allows users to quickly retrieve and visualize detailed information for one or more specific gene identifiers (IDs). This tool is essential for researchers looking up functional annotations and the genomic structure of genes of interest.
+The Gene Search Engine allows users to quickly retrieve and visualize detailed information for specific gene identifiers from the **Camelina sativa DH55 genome**. This tool searches against **Ensembl gene IDs** for the DH55 assembly, providing comprehensive functional annotations and genomic structure data.
 
 ---
 
 ## 1. Input and Action
 
-The functionality is centered around a single input field that accepts gene IDs.
+The functionality is centered around a single input field that accepts DH55-specific gene IDs.
 
 | Element | Description |
 | :--- | :--- |
-| **Input Field** | Accepts one or more **Gene IDs** (specific to the species, e.g., Cs01g001000). Multiple IDs should be separated by a line break or comma. |
-| **Search Genes Button** | Initiates the query against the database. |
+| **Input Field** | Accepts one or more **Camelina sativa DH55 Gene IDs** (e.g., `Cs01g001000`). Multiple IDs should be separated by a line break or comma. |
+| **Search Genes Button** | Initiates the query against the Ensembl DH55 genome database. |
+
+**Supported ID Format:** `Cs[chromosome]g[number]` (e.g., `Cs01g001000`, `Cs02g015000`)
 
 ---
 
@@ -21,33 +25,71 @@ Immediately below the input, the tool provides a summary of the search operation
 
 | Statistic | Description |
 | :--- | :--- |
-| **Total Genes Queried** | The total number of unique gene IDs submitted in the input field. |
-| **Annotations Found (Hits)** | The number of gene IDs for which the database returned successful, detailed annotation records. |
+| **Total Genes Queried** | The total number of unique DH55 gene IDs submitted in the input field. |
+| **Annotations Found (Hits)** | The number of gene IDs for which the Ensembl DH55 database returned successful, detailed annotation records. |
 
 ---
 
 ## 3. Detailed Gene Annotation (Per Hit)
 
-Each successful hit displays its information within an expandable panel, identified by the **Gene ID**.
+Each successful hit displays information from the **Camelina sativa DH55 genome** within an expandable panel.
 
-### Gene Structure Visualization
+### Gene Information Header
+- **Gene Name**: Displays both the common gene name (if available) and the official DH55 Ensembl gene ID
+- **Expandable Panel**: Click the header to expand/collapse detailed gene information
 
-This section provides a schematic view of the gene's physical structure and transcripts.
+### Gene Location & Coordinates (DH55 Genome)
+- **Chromosome**: Shows the DH55 chromosome where the gene is located
+- **Gene Coordinates**: **Clickable link** displaying the actual gene coordinates from DH55 GFF3 annotations
+- **Gene Length**: Calculated length in base pairs from the DH55 assembly
+- **Data Source**: All coordinates and structures are based on the DH55 reference genome
 
-* **Overall Gene Region:** Specifies the genomic coordinates (start and end base pairs) defining the span of the gene.
-* **Transcripts:** Displays the individual transcript isoforms associated with the gene ID.
-* **Structure Diagram:** A visual representation where **blue rectangles** represent **exons** and **connecting lines** represent **introns**.
+### Functional Annotations
+- **Ensembl Annotations**: Curated functional descriptions from the Ensembl DH55 database
+- **Structured Display**: Key-value pairs showing various annotation types specific to Camelina sativa
+- **Multi-source Integration**: Combines information from Ensembl, Mercator, Swissprot, and other curated databases
 
-### 4. Feature Details Modal (Interaction)
+### Gene Structure Visualization (DH55 Assembly)
 
-When a user **clicks on an exon** in the Structure Diagram, a modal window appears with fine-grained details specific to that feature (e.g., the Coding Sequence, or CDS).
+This section provides a schematic view of the gene's physical structure from the DH55 genome.
+
+* **Overall Gene Region:** **Clickable genomic coordinates** that navigate to the Genome Browser with the DH55 gene region pre-loaded
+* **Transcripts:** Displays the individual transcript isoforms from the DH55 genome assembly
+* **Structure Diagram:** A visual representation of DH55 gene structure where **blue rectangles** represent **exons** and **connecting lines** represent **introns**
+
+---
+
+## 4. Feature Details Modal (Interaction)
+
+When a user **clicks on an exon** in the Structure Diagram, a modal window appears with DH55-specific feature details.
 
 | Field | Description |
 | :--- | :--- |
-| **Type** | The type of feature clicked (e.g., **CDS** for Coding Sequence). |
-| **ID** | The specific transcript identifier of the feature (e.g., `Csa01g001000.2`). |
-| **Location** | The precise genomic start and end coordinates of this feature on the chromosome (e.g., `Chr 1 3687 - 4802`). |
-| **BINCODE** | A specific classification code for the feature (e.g., `'35.1'`). |
-| **DESCRIPTION** | A highly detailed, consolidated description combining information from multiple sources (Mercator, Swissprot, etc.) relevant to the transcript. |
-| **NAME** | The simplified or common name for the feature, if available. |
-| **Show Genome View Button** | An action button that likely redirects the user to the **Genome Assemblies Comparison** tool, centering the view directly on the coordinates of the selected feature. |
+| **Type** | The type of feature clicked from the DH55 annotation (e.g., **CDS** for Coding Sequence, **gene** for gene region). |
+| **ID** | The specific DH55 transcript identifier (e.g., `Csa01g001000.2`). |
+| **Location** | The precise genomic start and end coordinates on the DH55 chromosome (e.g., `Chr 1 3687 - 4802`). |
+| **BINCODE** | A specific classification code for the feature from DH55 annotations. |
+| **DESCRIPTION** | Detailed description from DH55 Ensembl annotations and integrated databases. |
+| **NAME** | The simplified or common name for the feature in the DH55 genome. |
+| **Show Genome View Button** | An action button that redirects to the **Genome Browser** with DH55-specific parameters: <br>- `geneid`: DH55 gene ID <br>- `transcriptid`: DH55 transcript ID <br>- `chr`: DH55 chromosome <br>- `start`: DH55 gene start position <br>- `end`: DH55 gene end position <br>- `type`: Feature type <br>- `species`: Pre-set to Camelina sativa DH55 |
+
+---
+
+## 5. Data Sources & Genome Specificity
+
+### Primary Data Source
+- **Genome Assembly**: Camelina sativa DH55
+- **Annotation Source**: Ensembl gene models for DH55
+- **Coordinate System**: DH55 chromosome coordinates
+
+### Supported Identifiers
+- **DH55 Gene IDs**: `Cs01g001000`, `Cs02g015000`, etc.
+- **DH55 Transcript IDs**: `Csa01g001000.1`, `Csa01g001000.2`, etc.
+- **Chromosome Names**: DH55 chromosome numbers (1-20)
+
+### Integration Features
+- **Ensembl DH55 Compliance**: All gene structures and coordinates follow the DH55 assembly
+- **Multi-transcript Support**: Handles alternative splicing variants from DH55 annotations
+- **Consistent Navigation**: Seamless transition to genome browser with DH55 context preserved
+
+**Note**: This tool is specifically designed for the Camelina sativa DH55 genome. Gene IDs from other assemblies (Celine, Joelle) may not be compatible and should be searched using their respective tools.

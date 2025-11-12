@@ -1,6 +1,8 @@
+Here's the updated documentation based on the changes in your component:
+
 # 🌳 Create Phylogenetic Tree
 
-This module is a dedicated tool for evolutionary analysis. It processes multiple DNA or protein sequences in FASTA format, calculates a distance matrix, and constructs a phylogenetic tree using the **Neighbor-Joining algorithm** to represent the evolutionary relationships between the sequences.
+This module is a dedicated tool for evolutionary analysis. It processes multiple DNA or protein sequences in FASTA format, calculates a distance matrix using **Levenshtein distance**, and constructs a phylogenetic tree using **hierarchical clustering** to represent the evolutionary relationships between the sequences.
 
 ---
 
@@ -12,9 +14,15 @@ The main input area requires raw sequence data in **FASTA format** (maximum 50 s
 
 | Action | Function |
 | :--- | :--- |
-| **Generate Tree** | Executes the sequence alignment, distance matrix calculation, and phylogenetic tree construction. |
-| **Clear** | Clears the text editor of all input sequences. |
+| **Generate Tree** | Executes sequence comparison using Levenshtein distance, calculates normalized distance matrix, and builds hierarchical clustering tree using average linkage method. |
+| **Clear** | Clears the text editor of all input sequences and resets the visualization. |
 | **Example** | Pre-fills the input box with sample FASTA sequences to demonstrate the required format. |
+
+### Sequence Validation
+- **DNA Sequences**: Only characters A, C, G, T, N are allowed
+- **Protein Sequences**: Only standard amino acid codes (ARNDCQEGHILKMFPSTWYVX) are allowed
+- **Duplicate Headers**: Sequence names must be unique
+- **Minimum**: At least 2 sequences required to build a tree
 
 ---
 
@@ -26,38 +34,71 @@ The middle panel provides controls for adjusting the visual display of the gener
 
 | Control | Type | Description |
 | :--- | :--- | :--- |
-| **Rectangular / Circular** | Radio Button | Toggles the overall layout style of the tree visualization. |
-| **Show Labels** | Checkbox | Toggles the visibility of node and branch labels (e.g., branch lengths, confidence scores). |
-| **Node Color** | Dropdown | Sets the color for the internal and external nodes of the tree. |
-| **Line Color** | Dropdown | Sets the color for the branches/lines connecting the nodes. |
-| **Line Style** | Dropdown | Sets the visual style of the branches (e.g., Solid, Dashed). |
+| **Show Labels** | Switch | Toggles the visibility of sequence labels on terminal nodes. |
+| **Node Color** | Color Picker | Sets the color for the internal and external nodes of the tree. |
+| **Line Color** | Color Picker | Sets the color for the branches/lines connecting the nodes. |
+| **Line Style** | Dropdown | Sets the visual style of the branches (Solid or Dotted). |
 
 ### Size and Scale
 
 Sliders allow for dynamic adjustment of various visual properties of the tree rendering:
 
-| Slider | Description |
-| :--- | :--- |
-| **Link Width** | Controls the thickness of the branches/lines in the tree. |
-| **Resize** | A general slider likely used to scale the entire tree visualization area. |
-| **Node Size** | Controls the size of the points representing the nodes (internal and terminal). |
-| **Font Size** | Controls the size of the text labels for the sequence names and any associated data (e.g., branch lengths). |
+| Slider | Range | Description |
+| :--- | :--- | :--- |
+| **Link Width** | 1-5 | Controls the thickness of the branches/lines in the tree. |
+| **Resize** | 0.5-2.0 | Scales the entire tree visualization (zoom in/out). |
+| **Node Size** | 1-10 | Controls the size of the points representing the nodes. |
+| **Font Size** | 5-20 | Controls the size of the text labels for sequence names. |
 
 ### Download
 
-The download buttons allow users to export the final tree visualization in various common image formats for use in reports or presentations.
+The download buttons allow users to export the final tree visualization in various common formats:
 
-* **SVG (Scalable Vector Graphics)**
-* **PNG (Portable Network Graphics)**
-* **JPEG (Joint Photographic Experts Group)**
+* **SVG** - Scalable Vector Graphics format for high-quality scaling
+* **PNG** - Portable Network Graphics format for web use
+* **JPEG** - Joint Photographic Experts Group format for general use
 
 ---
 
-## 3. Phylogenetic Tree Output
+## 3. Algorithm Details
 
-The bottom section displays the computed tree visualization.
+### Distance Calculation
+- Uses **Levenshtein distance** (edit distance) to measure sequence similarity
+- Distances are **normalized** by the maximum sequence length
+- Handles both DNA and protein sequences automatically
 
-* **Tree Structure:** Shows the hierarchical arrangement of sequences, with branches representing evolutionary time or distance. Sequences that share a closer branching point (closer to the right side of the visualization) are more closely related.
-* **Root:** The starting point of the tree (labeled `Root` or similar) represents the common ancestor.
-* **Nodes:** The branch points (internal nodes, labeled `Node 1`, `Node 2`, etc.) represent inferred common ancestors of the groups branching from them.
-* **Labels (Terminal Nodes):** The leaves of the tree are the identifiers of the input sequences (e.g., `Camelina sativa | DH55 |...`).
+### Tree Construction
+- **Hierarchical Clustering** with **average linkage** method
+- **Distance Matrix** based approach for accurate phylogenetic relationships
+- **Fallback Mechanism**: Creates a star tree when sequences are identical
+
+### Tree Structure
+- **Root Node**: The starting point labeled "Root" representing the common ancestor
+- **Internal Nodes**: Branch points labeled "Node_1", "Node_2", etc. representing inferred common ancestors
+- **Terminal Nodes**: Leaves of the tree showing the original sequence headers from FASTA input
+
+---
+
+## 4. Phylogenetic Tree Output
+
+The bottom section displays the computed tree visualization using D3.js.
+
+* **Tree Layout**: Horizontal dendrogram layout with root on the left and leaves on the right
+* **Interactive Scaling**: Use the resize slider to zoom in/out for better viewing
+* **Branch Relationships**: Sequences that share closer branching points are more evolutionarily related
+* **Distance Representation**: Branch lengths represent evolutionary distance based on sequence similarity
+
+### Visualization Features
+- **Responsive Design**: Automatically adjusts to container size
+- **High-Quality Export**: SVG export maintains vector quality for publications
+- **Customizable Appearance**: Full control over colors, sizes, and styles
+- **Real-time Updates**: Changes to customization options update the visualization immediately
+
+---
+
+## 5. Technical Notes
+
+- **Maximum Sequences**: Limited to 50 for performance reasons
+- **Sequence Length**: Handles sequences of varying lengths through normalization
+- **Memory Efficient**: Processes sequences without requiring extensive computational resources
+- **Browser-Based**: All computations happen client-side in the web browser
