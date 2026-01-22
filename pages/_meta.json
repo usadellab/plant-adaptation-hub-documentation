@@ -2,6 +2,7 @@
   "index": "Home Page",
   "datasets": "Datasets",
   "modules":  "Functional Modules",
+  "testing":  "Testing",
   "downloads" : "Downloads",
   "SFTP" : "UNTWIST SFTP",
   "about": {
